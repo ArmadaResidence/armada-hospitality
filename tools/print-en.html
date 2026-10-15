@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Armada Residence Hospitality — Packages</title>
+<meta name="viewport" content="width=1123">
+<!--
+  مصدر ملف الـPDF الإنجليزي. يقرأ البيانات من ../assets/js/packages-data.js
+  لإعادة التوليد: افتح الملف في Google Chrome ← طباعة ← حفظ بصيغة PDF
+  (الهوامش: بلا · رسومات الخلفية: مفعّلة).
+
+  Source of the English PDF. Reads ../assets/js/packages-data.js.
+  To regenerate: open in Google Chrome → Print → Save as PDF
+  (Margins: None · Background graphics: on).
+-->
+<style>
+@font-face { font-family: "Instrument Sans"; src: url("../assets/fonts/InstrumentSans-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "Instrument Sans"; src: url("../assets/fonts/InstrumentSans-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: "Crimson Pro"; src: url("../assets/fonts/CrimsonPro-Regular.ttf"); font-weight: 400; }
+
+@page { size: 297mm 210mm; margin: 0; }
+:root {
+  --bg: #0A1020; --bg2: #0E1628;
+  --gold: #C9A24A; --gold2: #E6CD8B;
+  --txt: #F1EEE6; --mut: #9AA4B5; --foot: #7E889A;
+  --por: #F3F0E8; --por-card: #FBFAF6; --por-line: #E1DCCF; --por-txt: #0E1526; --por-mut: #5C6575;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Crimson Pro", Georgia, serif;
+  --k: 1; /* menu scale, set by the fit script */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #555; }
+body { font-family: var(--sans); color: var(--txt); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+ul { list-style: none; }
+img { display: block; }
+
+.page {
+  width: 297mm; height: 210mm; position: relative; overflow: hidden;
+  background: var(--bg); padding: 38px 44px 58px;
+  page-break-after: always; break-after: page;
+  margin: 0 auto 16px;
+}
+@media print { html, body { background: none; } .page { margin: 0; } }
+.page:last-child { page-break-after: auto; break-after: auto; }
+.glow { position: absolute; inset: 0; pointer-events: none; }
+.page > *:not(.glow) { position: relative; }
+.page > .foot { position: absolute; }
+
+/* footer */
+.foot { left: 44px; right: 44px; bottom: 22px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,162,74,.28); padding-top: 9px; }
+.foot .brand { font-size: 9.5px; color: var(--foot); }
+.foot .num { font-family: var(--serif); font-size: 12px; letter-spacing: 3px; color: var(--gold); opacity: .8; }
+
+/* shared */
+.kicker { font-family: var(--serif); font-size: 11px; letter-spacing: 4.2px; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+.kick-row { display: flex; align-items: center; gap: 12px; }
+.kick-row .hair { width: 46px; height: 1px; background: var(--gold); }
+.glass { background: rgba(255,255,255,.035); border: 1px solid rgba(201,162,74,.22); border-radius: 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 14px 28px rgba(0,0,0,.3); }
+.hl { background: linear-gradient(150deg, rgba(201,162,74,.20), rgba(201,162,74,.07) 45%, rgba(201,162,74,0)); border-color: rgba(201,162,74,.55); }
+.photo { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid rgba(201,162,74,.25); background: var(--bg2); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,16,32,.78), rgba(10,16,32,0) 38%); }
+.photo .cap { position: absolute; left: 14px; bottom: 10px; z-index: 1; font-size: 11px; font-weight: 700; color: #fff; }
+.logo { height: 40px; width: auto; aspect-ratio: 420 / 94; align-self: flex-start; flex: none; object-fit: contain; }
+
+/* ---------- cover ---------- */
+.cover { display: flex; gap: 26px; }
+.cover .left { flex: 1 1 0; display: flex; flex-direction: column; }
+.cover .right { width: 545px; display: grid; grid-template-columns: 1.32fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; }
+.cover .t-block { margin-top: auto; }
+.cover h1 { font-size: 50px; line-height: 1.04; font-weight: 700; margin-top: 12px; letter-spacing: -.5px; }
+.cover h1 .g { color: var(--gold2); display: block; }
+.cover .tag { font-size: 21px; font-weight: 700; color: var(--gold2); margin-top: 14px; }
+.cover .intro { font-size: 12.5px; line-height: 1.65; color: var(--mut); margin-top: 12px; max-width: 470px; }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+.tile { padding: 12px 16px 13px; }
+.tile .kicker { font-size: 9.5px; letter-spacing: 3.4px; }
+.tile .v { font-size: 25px; font-weight: 700; color: var(--gold2); line-height: 1.15; margin-top: 3px; }
+.tile .l { font-size: 11px; color: var(--mut); margin-top: 2px; }
+
+/* ---------- overview ---------- */
+.ov { display: flex; gap: 22px; }
+.ov .main { flex: 1 1 0; display: flex; flex-direction: column; min-width: 0; }
+.ov .side { width: 356px; display: flex; flex-direction: column; gap: 12px; }
+.ov .side .photo { flex: 1 1 0; }
+.hdr-row { display: flex; justify-content: space-between; align-items: flex-start; }
+.hdr-row .bignum { font-family: var(--serif); font-size: 30px; color: var(--gold); opacity: .8; line-height: 1; }
+.sec-h { font-size: 29px; font-weight: 700; line-height: 1.1; margin-top: 6px; }
+.sec-h .g { color: var(--gold2); }
+.ov .lead { font-size: 11.5px; color: var(--mut); margin-top: 8px; }
+.ov .lead b { color: var(--txt); font-weight: 700; }
+.cats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.cat { padding: 12px 18px 8px; }
+.cat-top { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid rgba(201,162,74,.55); padding-bottom: 8px; }
+.cat-top h3 { font-size: 16px; font-weight: 700; line-height: 1.2; }
+.cat-top .sub { font-size: 10px; color: var(--mut); margin-top: 2px; }
+.cat-top .cnt { font-family: var(--serif); font-size: 15px; color: var(--gold); letter-spacing: 1px; }
+.prow { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px dashed rgba(154,164,181,.18); }
+.prow:last-child { border-bottom: 0; }
+.prow .nm { font-size: 12.5px; font-weight: 700; line-height: 1.25; }
+.prow .nm .g { color: var(--gold2); }
+.prow .nm small { display: block; font-size: 9.5px; font-weight: 400; color: var(--mut); margin-top: 1px; }
+.prow .ld { flex: 1; border-bottom: 1px dashed rgba(201,162,74,.45); height: 1px; align-self: center; }
+.prow .pr { font-size: 18px; font-weight: 700; color: var(--gold2); white-space: nowrap; }
+.prow .pr span { font-size: 10px; font-weight: 400; color: var(--mut); margin-left: 3px; }
+.terms-h { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 9px; }
+.term { padding: 9px 14px 10px; }
+.term .kicker { font-size: 9px; letter-spacing: 3px; }
+.term .v { font-size: 23px; font-weight: 700; color: var(--gold2); line-height: 1.2; margin-top: 2px; }
+.term .v.word { font-size: 15.5px; padding: 3px 0 4px; }
+.term .l { font-size: 10.5px; color: var(--mut); line-height: 1.35; }
+.ov .note { font-size: 9.8px; color: var(--mut); line-height: 1.5; margin-top: 8px; }
+
+/* ---------- package page ---------- */
+.pk { display: flex; gap: 22px; height: 100%; }
+.pk .rail { width: 286px; display: flex; flex-direction: column; padding: 24px 22px 22px; }
+.pk .main { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.pk .main > .photo.top { flex: 1 1 0; min-height: 120px; }
+.pk .main > .bottom { display: flex; gap: 14px; height: 196px; flex: none; }
+.pk .main > .bottom .photo { flex: 1 1 0; }
+.rail .cat-k { line-height: 1.2; }
+.rail .cat-s { font-size: 10.5px; color: var(--mut); margin-top: 3px; }
+.rail .no { margin-top: 26px; font-family: var(--serif); color: var(--gold); line-height: 1; }
+.rail .no b { font-size: 38px; font-weight: 400; }
+.rail .no span { font-size: 14px; color: var(--mut); margin-left: 4px; }
+.rail h2 { font-size: 27px; line-height: 1.12; font-weight: 700; margin-top: 6px; }
+.rail h2 .g { color: var(--gold2); display: block; }
+.rail .sub { font-size: 12px; font-weight: 700; color: var(--gold2); margin-top: 9px; }
+.rail .nt { font-size: 11px; color: var(--mut); margin-top: 3px; line-height: 1.45; }
+.chips { display: flex; gap: 7px; margin-top: 13px; flex-wrap: wrap; }
+.chip { font-size: 10px; padding: 5px 11px; border-radius: 999px; border: 1px solid rgba(154,164,181,.4); color: var(--mut); }
+.chip.b { border-color: var(--gold); color: var(--gold2); }
+.rail .rule { height: 1px; background: rgba(201,162,74,.35); margin: 16px 0 12px; }
+.rail .inc-h { font-size: 13px; font-weight: 700; color: var(--gold2); }
+.rail .inc li { font-size: 11.5px; color: var(--txt); opacity: .92; margin-top: 5px; display: flex; align-items: center; gap: 9px; }
+.rail .inc li::before { content: ""; width: 7px; height: 1.5px; background: var(--gold); flex: none; }
+.pricebox { margin-top: auto; padding: 16px 20px 15px; border-radius: 14px; border: 1px solid rgba(201,162,74,.55); background: linear-gradient(135deg, #1C160A, #0F1424 45%, #0A1020); }
+.pricebox .kicker { font-size: 9px; letter-spacing: 3px; }
+.pricebox .fig { display: flex; align-items: baseline; gap: 7px; margin-top: 4px; }
+.pricebox .fig b { font-size: 56px; line-height: .95; font-weight: 700; color: var(--gold2); letter-spacing: -1px; }
+.pricebox .fig span { font-size: 16px; font-weight: 700; }
+.pricebox .l1 { font-size: 12px; margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(201,162,74,.35); color: var(--txt); }
+.pricebox .l2 { font-size: 10.5px; color: var(--mut); margin-top: 1px; }
+
+.menu { display: flex; padding: calc(16px * var(--k)) 0 calc(14px * var(--k)); flex: none; }
+.menu .col { flex: 1 1 0; min-width: 0; padding: 0 calc(18px * var(--k)); border-left: 1px solid rgba(201,162,74,.2); }
+.menu .col:first-child { border-left: 0; }
+.msec + .msec { margin-top: calc(14px * var(--k)); }
+.msec h4 { font-size: calc(14px * var(--k)); font-weight: 700; color: var(--gold2); padding-bottom: calc(6px * var(--k)); border-bottom: 1px solid rgba(201,162,74,.38); margin-bottom: calc(6px * var(--k)); }
+.msec .mnote { font-size: calc(9.5px * var(--k)); color: var(--gold); margin: calc(-2px * var(--k)) 0 calc(5px * var(--k)); line-height: 1.35; }
+.msec .grp { font-size: calc(9.5px * var(--k)); font-weight: 700; color: var(--gold); margin-top: calc(5px * var(--k)); letter-spacing: .3px; }
+.msec li { position: relative; padding-left: 13px; font-size: calc(12px * var(--k)); line-height: 1.38; margin-top: calc(4px * var(--k)); }
+.msec li::before { content: ""; position: absolute; left: 1px; top: .55em; width: 4.5px; height: 4.5px; border-radius: 50%; background: var(--gold); }
+.msec .tag { display: inline-block; font-size: calc(8.5px * var(--k)); font-weight: 700; background: var(--gold2); color: #1C160A; border-radius: 999px; padding: 1px 7px; margin-left: 3px; vertical-align: 1px; white-space: nowrap; }
+
+/* ---------- booking (porcelain) ---------- */
+.page.light { background: var(--por); color: var(--por-txt); }
+.light .foot { border-top-color: var(--por-line); }
+.light .foot .brand { color: var(--por-mut); }
+.light .kicker { color: #8C6A22; }
+.light .kick-row .hair { background: #B8913A; }
+.bk-h { display: flex; justify-content: space-between; align-items: flex-start; }
+.bk-h .bignum { font-family: var(--serif); font-size: 46px; color: #B8913A; opacity: .75; line-height: .9; }
+.bk-h h2 { font-size: 31px; font-weight: 700; margin-top: 6px; line-height: 1.1; }
+.bk-h h2 .g { color: #A9852F; }
+.lcard { background: var(--por-card); border: 1px solid var(--por-line); border-radius: 14px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+.step { padding: 13px 18px 14px; }
+.step .n { font-family: var(--serif); font-size: 24px; color: #A9852F; line-height: 1; }
+.step h3 { font-size: 14px; font-weight: 700; margin-top: 4px; }
+.step p { font-size: 11px; color: var(--por-mut); margin-top: 2px; }
+.band { margin-top: 16px; background: #0C1325; border-radius: 14px; padding: 16px 26px 17px; color: var(--txt); border: 1px solid rgba(201,162,74,.2); position: relative; overflow: hidden; }
+.band .kicker { color: var(--gold); font-size: 9.5px; letter-spacing: 3.4px; }
+.band h3 { font-size: 24px; font-weight: 700; margin-top: 3px; }
+.band h3 .g { color: var(--gold2); }
+.band p { font-size: 11.5px; color: var(--mut); margin-top: 4px; }
+.contacts { display: grid; grid-template-columns: 1fr 1fr 1fr 124px; gap: 12px; margin-top: 16px; }
+.cc { padding: 14px 18px 15px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 128px; }
+.cc .kicker { font-size: 9px; letter-spacing: 3px; }
+.cc .v { font-size: 13.5px; font-weight: 700; margin-top: 7px; }
+.cc .s { font-size: 10.5px; color: var(--por-mut); margin-top: 3px; }
+.qr { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 8px; }
+.qr .plate { background: #fff; padding: 7px; border-radius: 8px; }
+.qr img { width: 78px; height: 78px; image-rendering: pixelated; }
+.qr .q1 { font-size: 10.5px; font-weight: 700; margin-top: 6px; color: #8C6A22; }
+.qr .q2 { font-family: var(--serif); font-size: 8.5px; letter-spacing: 2.6px; color: #A9852F; }
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; flex: 1 1 0; min-height: 0; }
+.bk { display: flex; flex-direction: column; height: 100%; }
+</style>
+</head>
+<body>
+<div id="doc"></div>
+<script src="../assets/js/packages-data.js"></script>
+<script>
+(function () {
+  var D = window.ARMADA, TOTAL = 15, page = 0;
+  function e(v) { return String(v).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function en(o) { return o ? o.en : ""; }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function photo(key, cls) { var p = D.photos[key]; return '<figure class="photo ' + (cls || "") + '"><img src="../' + e(p.src) + '" alt="' + e(en(p.caption)) + '"><span class="cap">' + e(en(p.caption)) + "</span></figure>"; }
+  function foot() { page++; return '<div class="foot"><span class="brand">' + e(en(D.site.footer)) + '</span><span class="num">' + pad(page) + " / " + TOTAL + "</span></div>"; }
+  function glow(x, y, a) { return '<div class="glow" style="background:radial-gradient(circle at ' + x + "% " + y + "%, rgba(201,162,74," + a + "), rgba(10,16,32,0) 46%)\"></div>"; }
+  function nameHtml(p) { return p.nameParts ? e(p.nameParts.en[0]) + ' <span class="g">' + e(p.nameParts.en[1]) + "</span>" : e(en(p.name)); }
+  function itemsLabel(n) { return n + " items"; }
+  var logo = '<img class="logo" src="../assets/img/logo-armada-residence.png" alt="Armada Residence">';
+  var pk = D.allPackages(), minPrice = Math.min.apply(null, pk.map(function (p) { return p.price; }));
+  var html = "";
+
+  /* 01 cover */
+  var S = D.site;
+  html += '<section class="page">' + glow(22, 40, .16) +
+    '<div class="cover" style="height:100%">' +
+      '<div class="left">' + logo +
+        '<div class="t-block">' +
+          '<div class="kick-row"><span class="kicker">Hospitality Packages</span><span class="hair"></span></div>' +
+          '<h1>' + e(en(S.title1)) + '<span class="g">' + e(en(S.title2)) + "</span></h1>" +
+          '<p class="tag">' + e(en(S.tagline)) + "</p>" +
+          '<p class="intro">' + e(en(S.intro)) + "</p>" +
+          '<div class="tiles">' +
+            '<div class="tile glass"><p class="kicker">Packages</p><p class="v">' + pk.length + '</p><p class="l">Hospitality packages</p></div>' +
+            '<div class="tile glass"><p class="kicker">Categories</p><p class="v">' + D.categories.length + '</p><p class="l">Service categories</p></div>' +
+            '<div class="tile glass"><p class="kicker">From</p><p class="v">' + minPrice + '</p><p class="l">SAR average price per guest</p></div>' +
+            '<div class="tile glass"><p class="kicker">Pricing</p><p class="v">Inclusive</p><p class="l">of taxes and fees</p></div>' +
+          "</div>" +
+        "</div>" +
+      "</div>" +
+      '<div class="right">' + photo(S.coverPhotos[0]) + photo(S.coverPhotos[1]) + photo(S.coverPhotos[2]) + photo(S.coverPhotos[3]) + "</div>" +
+    "</div>" + foot() + "</section>";
+
+  /* 02 overview */
+  var cats = D.categories.map(function (c) {
+    var rows = c.packages.map(function (p) {
+      return '<div class="prow"><span class="nm">' + nameHtml(p) + (p.subtitle ? "<small>" + e(en(p.subtitle)) + "</small>" : "") + '</span><span class="ld"></span><span class="pr">' + p.price + "<span>SAR</span></span></div>";
+    }).join("");
+    return '<div class="cat glass"><div class="cat-top"><div><h3>' + e(en(c.name)) + "</h3>" + (c.subtitle ? '<p class="sub">' + e(en(c.subtitle)) + "</p>" : "") + '</div><span class="cnt">' + pad(c.packages.length) + "</span></div>" + rows + "</div>";
+  }).join("");
+  var terms = S.terms.map(function (t) {
+    var word = /[a-z]/i.test(t.value.en);
+    return '<div class="term glass' + (t.highlight ? " hl" : "") + '"><p class="kicker">' + e(t.kicker) + '</p><p class="v' + (word ? " word" : "") + '">' + e(t.value.en) + '</p><p class="l">' + e(t.label.en) + "</p></div>";
+  }).join("");
+  html += '<section class="page">' + glow(30, 10, .13) +
+    '<div class="ov" style="height:100%"><div class="main">' +
+      '<div class="hdr-row"><div>' + logo + '<div class="kick-row" style="margin-top:12px"><span class="kicker">At a Glance</span><span class="hair"></span></div>' +
+      '<h2 class="sec-h">Packages <span class="g">&amp; Prices</span></h2></div><span class="bignum">02</span></div>' +
+      '<p class="lead">All prices are in Saudi riyals — <b>average price per guest, inclusive of taxes and fees</b>. Each package is detailed on its own page.</p>' +
+      '<div class="cats">' + cats + "</div>" +
+      '<div class="terms-h"><span class="kicker">Booking Terms</span><span class="hair" style="width:46px;height:1px;background:var(--gold)"></span></div>' +
+      '<div class="terms">' + terms + "</div>" +
+      '<p class="note">' + e(en(S.termsNote)) + "</p>" +
+    '</div><div class="side">' + S.overviewPhotos.map(function (k) { return photo(k); }).join("") + "</div></div>" + foot() + "</section>";
+
+  /* 03–14 packages */
+  var glows = [[0, 0], [100, 100], [0, 100], [100, 0]];
+  D.categories.forEach(function (c) {
+    c.packages.forEach(function (p, k) {
+      var cols = (p.pdfColumns || [p.sections.map(function (s) { return s.key; })]).map(function (keys) {
+        return '<div class="col">' + keys.map(function (key) {
+          var s = p.sections.filter(function (x) { return x.key === key; })[0];
+          return '<div class="msec"><h4>' + e(en(s.title)) + "</h4>" + (s.note ? '<p class="mnote">' + e(en(s.note)) + "</p>" : "") +
+            s.groups.map(function (g) {
+              return (g.label ? '<p class="grp">' + e(en(g.label)) + "</p>" : "") + "<ul>" + g.items.map(function (it) {
+                return "<li>" + e(it.en) + (it.tag ? ' <span class="tag">' + e(it.tag.en) + "</span>" : "") + "</li>";
+              }).join("") + "</ul>";
+            }).join("") + "</div>";
+        }).join("") + "</div>";
+      }).join("");
+      var g = glows[page % 4];
+      html += '<section class="page">' + glow(g[0], g[1], .10) +
+        '<div class="pk">' +
+          '<aside class="rail glass">' +
+            '<p class="kicker cat-k">' + e(c.kicker) + "</p>" + (c.subtitle ? '<p class="cat-s">' + e(en(c.subtitle)) + "</p>" : "") +
+            '<p class="no"><b>' + pad(k + 1) + "</b><span>/ " + pad(c.packages.length) + "</span></p>" +
+            "<h2>" + nameHtml(p) + "</h2>" +
+            (p.subtitle ? '<p class="sub">' + e(en(p.subtitle)) + "</p>" : "") +
+            (p.note ? '<p class="nt">' + e(en(p.note)) + "</p>" : "") +
+            '<div class="chips"><span class="chip">' + itemsLabel(D.countItems(p)) + "</span>" + (p.minGuests ? '<span class="chip b">Minimum ' + p.minGuests + " guests</span>" : "") + "</div>" +
+            '<div class="rule"></div><p class="inc-h">Package includes</p><ul class="inc">' + p.sections.map(function (s) { return "<li>" + e(en(s.title)) + "</li>"; }).join("") + "</ul>" +
+            '<div class="pricebox"><p class="kicker">Average per guest</p><p class="fig"><b>' + p.price + '</b><span>SAR</span></p>' +
+            '<p class="l1">Inclusive of taxes and fees</p></div>' +
+          "</aside>" +
+          '<div class="main">' + photo(p.photo, "top") +
+            '<div class="menu glass">' + cols + "</div>" +
+            (p.pdfExtraPhotos ? '<div class="bottom">' + p.pdfExtraPhotos.map(function (x) { return photo(x); }).join("") + "</div>" : "") +
+          "</div>" +
+        "</div>" + foot() + "</section>";
+    });
+  });
+
+  /* 15 booking */
+  var C = S.contact;
+  html += '<section class="page light"><div class="bk">' +
+    '<div class="bk-h"><div><div class="kick-row"><span class="kicker">Book Your Package</span><span class="hair"></span></div><h2>Book your <span class="g">package</span></h2></div><span class="bignum">15</span></div>' +
+    '<div class="steps">' + S.steps.map(function (st, i) { return '<div class="step lcard"><p class="n">' + pad(i + 1) + "</p><h3>" + e(st.title.en) + "</h3><p>" + e(st.text.en) + "</p></div>"; }).join("") + "</div>" +
+    '<div class="band">' + glow(90, 0, .18) + '<p class="kicker">' + e(S.moreBetter.kicker) + '</p><h3>' + e(S.moreBetter.title1.en) + ' <span class="g">' + e(S.moreBetter.title2.en) + "</span></h3><p>" + e(S.moreBetter.text.en) + "</p></div>" +
+    '<div class="contacts">' +
+      '<div class="cc lcard"><p class="kicker">Phone &amp; WhatsApp</p><p class="v">' + e(C.phone) + '</p><p class="s">' + e(C.person.en) + "</p></div>" +
+      '<div class="cc lcard"><p class="kicker">Reservations</p><p class="v">' + e(C.reservations) + '</p><p class="s">' + e(C.reservationsLabel.en) + "</p></div>" +
+      '<div class="cc lcard"><p class="kicker">Email &amp; Web</p><p class="v">' + e(C.info) + '</p><p class="s">' + e(C.handle) + " · " + e(C.website) + "</p></div>" +
+      '<div class="qr lcard"><div class="plate"><img src="../' + e(C.qr) + '" alt="B2B portal QR code"></div><p class="q1">Partners Portal</p><p class="q2">B2B PORTAL</p></div>' +
+    "</div>" +
+    '<div class="strip">' + S.bookingPhotos.map(function (k) { return photo(k); }).join("") + "</div>" +
+    "</div>" + foot() + "</section>";
+
+  document.getElementById("doc").innerHTML = html;
+
+  /* fit: shrink a package menu slightly if a page would overflow */
+  function fit() {
+    var report = [];
+    document.querySelectorAll(".page").forEach(function (pg, idx) {
+      var main = pg.querySelector(".pk .main");
+      if (!main) return;
+      var top = main.querySelector(".photo.top"), k = 1;
+      function over() { return main.scrollHeight > main.clientHeight + 1 || (top && top.getBoundingClientRect().height < 150); }
+      while (over() && k > 0.82) { k = Math.round((k - 0.02) * 100) / 100; pg.style.setProperty("--k", k); }
+      report.push({ page: idx + 1, k: k, photo: top ? Math.round(top.getBoundingClientRect().height) : null, overflow: main.scrollHeight - main.clientHeight });
+    });
+    // every page: content must end above the footer rule
+    document.querySelectorAll(".page").forEach(function (pg, idx) {
+      var footTop = pg.querySelector(".foot").getBoundingClientRect().top, lowest = 0;
+      pg.querySelectorAll("*").forEach(function (el) {
+        if (el.children.length || el.closest(".foot") || el.classList.contains("glow")) return;
+        var r = el.getBoundingClientRect(); if (r.height > 0 && r.bottom > lowest) lowest = r.bottom;
+      });
+      report.push({ page: idx + 1, clearance: Math.round(footTop - lowest) });
+    });
+    window.__fitReport = report;
+  }
+  var imgs = Array.prototype.slice.call(document.images);
+  Promise.all(imgs.map(function (im) { return im.complete ? 1 : new Promise(function (r) { im.onload = im.onerror = r; }); }))
+    .then(function () { return document.fonts ? document.fonts.ready : 1; })
+    .then(function () { fit(); window.__ready = true; });
+})();
+</script>
+</body>
+</html>

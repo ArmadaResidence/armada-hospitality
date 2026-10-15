@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>باقات الضيافة — أرمادا ريزيدنس، الطائف</title>
+  <meta name="description" content="باقات الكوفي بريك وبوفيهات الغداء والعشاء وقوائم الرياضيين والبوفيه الآسيوي في أرمادا ريزيدنس بالطائف، بأسعار شاملة الضرائب والرسوم.">
+  <meta name="theme-color" content="#142A3B">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="باقات الضيافة — أرمادا ريزيدنس، الطائف">
+  <meta property="og:description" content="12 باقة ضيافة · الكوفي بريك والبوفيهات · أسعار شاملة الضرائب والرسوم">
+  <link rel="icon" href="data:,">
+
+  <!-- يضبط اللغة والاتجاه قبل الرسم لتفادي الوميض / set language before first paint -->
+  <script>
+    (function () {
+      var lang = "ar";
+      try {
+        var q = new URLSearchParams(location.search).get("lang");
+        var saved = localStorage.getItem("armada-lang");
+        if (q === "ar" || q === "en") lang = q; else if (saved === "ar" || saved === "en") lang = saved;
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    })();
+  </script>
+
+  <!-- الخطوط: IBM Plex Sans Arabic + Manrope / fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#prices" data-i18n="skip">انتقل إلى الباقات</a>
+
+  <header class="site-header">
+    <div class="wrap hdr">
+      <a class="brand" href="#top">
+        <img src="./assets/img/logo-armada-residence.png" width="420" height="94" alt="Armada Residence — أرمادا ريزيدنس">
+      </a>
+      <div class="hdr-actions">
+        <a class="btn-pdf btn-pdf--hdr js-pdf" href="./files/armada-coffee-break-buffet-ar.pdf" download="armada-coffee-break-buffet-ar.pdf" type="application/pdf">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span data-i18n="download">تحميل الباقات PDF</span>
+        </a>
+        <div class="lang" role="group" aria-label="اللغة / Language">
+          <svg class="ico globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5c2.6 2.6 3.9 5.8 3.9 9.5s-1.3 6.9-3.9 9.5c-2.6-2.6-3.9-5.8-3.9-9.5S9.4 5.1 12 2.5z"/></svg>
+          <button type="button" class="lang-btn" data-set-lang="ar" lang="ar" aria-pressed="true">العربية</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" data-set-lang="en" lang="en" aria-pressed="false">English</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="catnav" id="catnav" aria-label="فئات الباقات">
+    <div class="wrap"><ul class="catnav-list" id="catnav-list"></ul></div>
+  </nav>
+
+  <main id="main">
+    <noscript>
+      <div class="wrap noscript">
+        <p>يتطلب عرض الباقات تفعيل JavaScript. يمكنك تحميل القائمة كاملة:
+          <a href="./files/armada-coffee-break-buffet-ar.pdf" download>تحميل الباقات PDF</a></p>
+        <p lang="en" dir="ltr">Please enable JavaScript to view the packages, or download the full menu:
+          <a href="./files/armada-coffee-break-buffet-en.pdf" download>Download PDF</a></p>
+      </div>
+    </noscript>
+    <div id="app"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap ftr">
+      <p data-i18n-site="footer">ضيافة أرمادا ريزيدنس — الطائف</p>
+      <a href="#top" class="ftr-top" data-i18n="backTop">العودة إلى الأعلى</a>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" id="to-top" aria-label="العودة إلى الأعلى" hidden>
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg>
+  </a>
+
+  <script src="./assets/js/packages-data.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
